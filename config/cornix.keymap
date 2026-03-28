@@ -46,7 +46,7 @@
 &kp LSHFT            &kp Z         &kp X         &kp C         &kp V          &kp B       &kp C_MUTE    &none          &kp N          &kp M          &kp COMMA      &kp DOT        &kp FSLH       &mo LOWER
 &kp LCTRL            &mo LOWER     &kp LALT      &kp LGUI      &kp LGUI       &kp SPACE                  &kp RET       &mo RAISE      &kp LALT       &kp RALT       &kp RGUI       &kp RCTRL
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp F14 F15>;
         };
 
         lower_layer {
@@ -58,7 +58,7 @@
 &kp LSHFT  &trans        &trans        &trans        &trans      &trans       &trans       &trans       &trans       &trans       &trans        &trans        &trans         &trans
 &kp LCTRL  &kp LGUI      &kp LALT      &trans        &trans      &kp SPACE                  &kp LA(RET)  &trans       &trans       &kp RALT      &kp RGUI      &kp RCTRL
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp F14 F15>;
         };
 
         raise_layer {
@@ -70,7 +70,7 @@
 &kp LSHFT  &trans     &trans     &trans     &trans      &trans      &trans      &trans      &kp UNDER   &kp PLUS    &kp LBRC    &kp RBRC    &kp PIPE    &kp TILDE
 &kp LCTRL  &kp LGUI   &kp LALT   &trans     &trans      &kp SPACE                &kp RET     &trans      &trans      &kp RALT    &kp RGUI    &kp RCTRL
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp F14 F15>;
         };
 
         adjust_layer {
@@ -82,7 +82,7 @@
 &bt BT_CLR  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &trans         &trans      &trans          &trans          &trans          &trans           &trans        &trans        &trans        &trans
 &trans      &trans         &trans         &trans         &trans         &trans                     &trans          &trans          &trans          &trans        &trans        &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp F14 F15>;
         };
     };
 };
