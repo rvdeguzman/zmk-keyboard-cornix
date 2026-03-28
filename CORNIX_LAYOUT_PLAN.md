@@ -27,7 +27,7 @@ This is the planned direction for porting the Corne-inspired layout onto the 50-
 +------+------+------+------+------+------+        +------+------+------+------+------+------+
 | SHFT | Z    | X    | C    | V    | B    | MUTE | ???  | N    | M    | ,    | .    | /    | LOWER |
 +------+------+------+------+------+------+------+------+------+------+------+------+------+------+
-| LCTL | LGUI | LALT | LOWER | LGUI | SPACE|        | ENTER| ALT | RAISE | RALT | RGUI | RCTL |
+| LCTL | LGUI | LALT | LGUI | LOWER| SPACE|        | ENTER| RAISE| ALT| RALT | RGUI | RCTL |
 +------+------+------+------+------+------+        +------+------+------+------+------+------+
 ```
 
