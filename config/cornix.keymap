@@ -94,7 +94,7 @@
 
             bindings = <
 &kp TAB              &kp Q               &kp W              &kp E              &kp R                  &kp T       &kp Y      &kp U                &kp I            &kp O         &kp P             &kp BSPC
-&mt_esc LCTRL ESC    &hm_l LCTRL A       &hm_l LALT S       &hm_l LGUI D       &hm_shift_l LSHFT F    &kp G       &kp H      &hm_shift_r RSHFT J  &hm_r RGUI K     &hm_r RALT L  &hm_r RCTRL SEMI  &kp SQT
+&mt_esc LCTRL ESC    &hm_shift_l LSHFT A       &hm_l LALT S       &hm_l LGUI D       &hm_l CTRL F    &kp G       &kp H      &hm_r RCTRL J  &hm_r RGUI K     &hm_r RALT L  &hm_shift_r RSHFT SEMI  &kp SQT
 &kp LSHFT            &kp Z               &kp X              &kp C              &kp V                  &kp B       &kp C_MUTE &kp C_MUTE           &kp N            &kp M         &kp COMMA         &kp DOT        &kp FSLH       &mo LOWER
 &kp LCTRL            &kp LGUI            &kp LALT           &kp LGUI           &mo LOWER              &kp SPACE                  &kp RET       &mo RAISE            &kp LALT         &kp RALT      &kp RGUI          &kp RCTRL
             >;
