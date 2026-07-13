@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cornix Keymap Explainer</title>
+<style>
+  :root {
+    --bg: #14161a;
+    --card: #1d2026;
+    --key: #262a32;
+    --key-border: #363c47;
+    --text: #e8eaed;
+    --dim: #8a919e;
+    --accent: #6ab0f3;
+    --hold: #f3c76a;
+    --trans: #4a505c;
+    --mute: #b06af3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Segoe UI", sans-serif;
+    margin: 0; padding: 2rem; display: flex; flex-direction: column; align-items: center;
+  }
+  h1 { margin: 0 0 .25rem; font-size: 1.6rem; }
+  .sub { color: var(--dim); margin-bottom: 1.5rem; font-size: .9rem; }
+  .layer {
+    background: var(--card); border-radius: 12px; padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem; max-width: 1100px; width: 100%;
+  }
+  .layer h2 { margin: 0 0 .2rem; font-size: 1.1rem; color: var(--accent); }
+  .layer .how { color: var(--dim); font-size: .82rem; margin-bottom: 1rem; }
+  .board { display: flex; justify-content: center; gap: 3rem; }
+  .half { display: flex; flex-direction: column; gap: 6px; }
+  .row { display: flex; gap: 6px; }
+  .row.right { justify-content: flex-end; }
+  .key {
+    width: 62px; height: 52px; background: var(--key);
+    border: 1px solid var(--key-border); border-radius: 7px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-size: .78rem; text-align: center; line-height: 1.15; padding: 2px;
+  }
+  .key small { color: var(--hold); font-size: .62rem; }
+  .key.layer-key { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+  .key.trans { color: var(--trans); background: #1a1d23; }
+  .key.mute { border-color: var(--mute); color: var(--mute); font-size: .68rem; }
+  .key.bt { color: #6af3b0; }
+  .thumbs { margin-top: 4px; }
+  .legend, .notes {
+    max-width: 1100px; width: 100%; background: var(--card);
+    border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; font-size: .88rem;
+  }
+  .legend span { display: inline-block; margin-right: 1.5rem; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: middle; }
+  .notes ul { margin: .5rem 0 0; padding-left: 1.2rem; color: var(--dim); }
+  .notes li { margin-bottom: .4rem; }
+  .notes b { color: var(--text); }
+  code { background: var(--key); padding: 1px 5px; border-radius: 4px; font-size: .82em; }
+</style>
+</head>
+<body>
+
+<h1>Cornix Keymap</h1>
+<div class="sub">from <code>config/cornix.keymap</code> &mdash; 4 layers: Base, Lower, Raise, Adjust</div>
+
+<div class="legend">
+  <span><span class="dot" style="background:var(--hold)"></span>gold subtext = hold action (tap/hold key)</span>
+  <span><span class="dot" style="background:var(--accent)"></span>blue = layer switch</span>
+  <span><span class="dot" style="background:var(--trans)"></span>gray = transparent (falls through to Base)</span>
+  <span><span class="dot" style="background:var(--mute)"></span>purple = encoder press</span>
+</div>
+
+<!-- ============ BASE ============ -->
+<div class="layer">
+  <h2>Base</h2>
+  <div class="how">Default layer. Standard QWERTY.</div>
+  <div class="board">
+    <div class="half">
+      <div class="row"><div class="key">Tab</div><div class="key">Q</div><div class="key">W</div><div class="key">E</div><div class="key">R</div><div class="key">T</div></div>
+      <div class="row"><div class="key">Esc<small>hold: Ctrl</small></div><div class="key">A</div><div class="key">S</div><div class="key">D</div><div class="key">F</div><div class="key">G</div></div>
+      <div class="row"><div class="key">Shift</div><div class="key">Z</div><div class="key">X</div><div class="key">C</div><div class="key">V</div><div class="key">B</div><div class="key mute">Mute<br>(enc)</div></div>
+      <div class="row thumbs"><div class="key">Ctrl</div><div class="key">Gui</div><div class="key">Alt</div><div class="key">Gui</div><div class="key layer-key">Lower</div><div class="key">Space</div></div>
+    </div>
+    <div class="half">
+      <div class="row right"><div class="key">Y</div><div class="key">U</div><div class="key">I</div><div class="key">O</div><div class="key">P</div><div class="key">Bksp</div></div>
+      <div class="row right"><div class="key">H</div><div class="key">J</div><div class="key">K</div><div class="key">L</div><div class="key">;</div><div class="key">'</div></div>
+      <div class="row right"><div class="key mute">Mute<br>(enc)</div><div class="key">N</div><div class="key">M</div><div class="key">,</div><div class="key">.</div><div class="key">/</div><div class="key layer-key">Lower</div></div>
+      <div class="row right thumbs"><div class="key">Enter</div><div class="key layer-key">Raise</div><div class="key">Alt</div><div class="key">RAlt</div><div class="key">RGui</div><div class="key">RCtrl</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ LOWER ============ -->
+<div class="layer">
+  <h2>Lower</h2>
+  <div class="how">Hold <b>Lower</b> (left thumb or right outer). Numbers, arrows, media.</div>
+  <div class="board">
+    <div class="half">
+      <div class="row"><div class="key">Tab</div><div class="key">1</div><div class="key">2</div><div class="key">3</div><div class="key">4</div><div class="key">5</div></div>
+      <div class="row"><div class="key trans">&#9251;</div><div class="key">Vol&minus;</div><div class="key">Vol+</div><div class="key">Mute</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div></div>
+      <div class="row"><div class="key">Shift</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div></div>
+      <div class="row thumbs"><div class="key">Ctrl</div><div class="key">Gui</div><div class="key">Alt</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key">Space</div></div>
+    </div>
+    <div class="half">
+      <div class="row right"><div class="key">6</div><div class="key">7</div><div class="key">8</div><div class="key">9</div><div class="key">0</div><div class="key">Bksp</div></div>
+      <div class="row right"><div class="key">&larr;</div><div class="key">&darr;</div><div class="key">&uarr;</div><div class="key">&rarr;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div></div>
+      <div class="row right"><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div></div>
+      <div class="row right thumbs"><div class="key">Alt+<br>Enter</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key">RAlt</div><div class="key">RGui</div><div class="key">RCtrl</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ RAISE ============ -->
+<div class="layer">
+  <h2>Raise</h2>
+  <div class="how">Hold <b>Raise</b> (right thumb). Numbers and symbols.</div>
+  <div class="board">
+    <div class="half">
+      <div class="row"><div class="key">Tab</div><div class="key">1</div><div class="key">2</div><div class="key">3</div><div class="key">4</div><div class="key">5</div></div>
+      <div class="row"><div class="key">Ctrl</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div></div>
+      <div class="row"><div class="key">Shift</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div></div>
+      <div class="row thumbs"><div class="key">Ctrl</div><div class="key">Gui</div><div class="key">Alt</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key">Space</div></div>
+    </div>
+    <div class="half">
+      <div class="row right"><div class="key">6</div><div class="key">7</div><div class="key">8</div><div class="key">9</div><div class="key">0</div><div class="key">Bksp</div></div>
+      <div class="row right"><div class="key">&minus;</div><div class="key">=</div><div class="key">[</div><div class="key">]</div><div class="key">\</div><div class="key">`</div></div>
+      <div class="row right"><div class="key trans">&#9251;</div><div class="key">_</div><div class="key">+</div><div class="key">{</div><div class="key">}</div><div class="key">|</div><div class="key">~</div></div>
+      <div class="row right thumbs"><div class="key">Enter</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key">RAlt</div><div class="key">RGui</div><div class="key">RCtrl</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ADJUST ============ -->
+<div class="layer">
+  <h2>Adjust</h2>
+  <div class="how">Hold <b>Lower + Raise</b> together (conditional layer). Mouse and Bluetooth.</div>
+  <div class="board">
+    <div class="half">
+      <div class="row"><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div></div>
+      <div class="row"><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key">M-Mid</div><div class="key">M-Right</div><div class="key">M-Left</div><div class="key trans">&#9251;</div></div>
+      <div class="row"><div class="key bt">BT Clr</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div></div>
+      <div class="row thumbs"><div class="key bt">BT 0</div><div class="key bt">BT 1</div><div class="key bt">BT 2</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div></div>
+    </div>
+    <div class="half">
+      <div class="row right"><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div></div>
+      <div class="row right"><div class="key">Mouse<br>&larr;</div><div class="key">Mouse<br>&darr;</div><div class="key">Mouse<br>&uarr;</div><div class="key">Mouse<br>&rarr;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div></div>
+      <div class="row right"><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div></div>
+      <div class="row right thumbs"><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div><div class="key trans">&#9251;</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="notes">
+  <b>Special behaviors</b>
+  <ul>
+    <li><b>Esc / Ctrl mod-tap</b> (<code>mt_esc</code>): tap for Esc, hold for Ctrl. Hold-preferred flavor, 150&nbsp;ms tapping term &mdash; a quick tap sends Esc; anything held past 150&nbsp;ms (or interrupted by another key) acts as Ctrl.</li>
+    <li><b>Adjust is conditional</b>: it activates automatically whenever Lower and Raise are both held &mdash; there is no dedicated Adjust key.</li>
+    <li><b>Encoders</b> (all layers): left knob = Volume up/down, right knob = Pause-Break / Scroll Lock. Pressing either knob = Mute.</li>
+    <li><b>Bluetooth</b> (Adjust layer): BT 0/1/2 select paired profiles; BT Clr forgets the current profile.</li>
+  </ul>
+</div>
+
+</body>
+</html>
