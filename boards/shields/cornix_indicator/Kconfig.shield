@@ -1,2 +1,9 @@
 config SHIELD_CORNIX_INDICATOR
 	def_bool $(shields_list_contains, cornix_indicator)
+
+# ponytail: compat shim — zephyr 4.1 removed the WS2812_STRIP umbrella symbol,
+# but zmk-rgbled-widget's Kconfig still references it typelessly. Giving it a
+# type here silences the fatal "defined without a type" warning. The real SPI
+# driver (WS2812_STRIP_SPI) auto-enables from the enabled DT node.
+config WS2812_STRIP
+	bool "WS2812 LED strip (zephyr 4.1 compat shim)"

@@ -21,7 +21,7 @@ manifest:
       clone-depth: 1
     - name: zmk-rgbled-widget
       remote: hitsmaxft
-      revision: ledstrip_pwm
+      revision: main
       clone-depth: 1
     - name: zmk-dongle-display
       remote: hitsmaxft
