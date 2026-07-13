@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/urob
     - name: janpfischer
       url-base: https://github.com/janpfischer
+    - name: rvdeguzman
+      url-base: https://github.com/rvdeguzman
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -20,7 +22,7 @@ manifest:
       revision: main
       clone-depth: 1
     - name: zmk-rgbled-widget
-      remote: hitsmaxft
+      remote: rvdeguzman
       revision: main
       clone-depth: 1
     - name: zmk-dongle-display
